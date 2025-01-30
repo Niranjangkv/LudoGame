@@ -1,20 +1,19 @@
-import History from './components/History'
-import Home from './components/Home'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import History from './components/WatchListScreen'
+import Home from './components/HomeScreen'
 import {NavigationContainer} from '@react-navigation/native';
-import {useState} from "react"
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const Stack=createNativeStackNavigator();
+const Tab=createBottomTabNavigator();
 
 const App = () => {
 
   return (
    
       <NavigationContainer>
-          <Stack.Navigator initialRouteName='Home'>
-             <Stack.Screen name="Home" component={Home} option={{title:'Welcome'}}></Stack.Screen>
-             <Stack.Screen name='History' component={History} option={{title:'History'}}></Stack.Screen>
-         </Stack.Navigator>
+          <Tab.Navigator initialRouteName='Home'>
+             <Tab.Screen name="Home" component={Home} option={{title:'Welcome'}}></Tab.Screen>
+             <Tab.Screen name='History' component={History} option={{title:'History'}}></Tab.Screen>
+         </Tab.Navigator>
        </NavigationContainer>
    
   
